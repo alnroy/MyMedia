@@ -20,7 +20,7 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
     );
   }
 
-  return isAuthenticated ? children : <Navigate to="/" />;
+  return isAuthenticated ? children : <Navigate to="MyMedia/" />;
 };
 
 const queryClient = new QueryClient();
@@ -40,7 +40,7 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="MyMedia/" element={<Index />} />
             <Route
               path="/dashboard"
               element={
