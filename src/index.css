@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Anime Glassmorphism Theme - HSL Colors */
+    --background: 240 40% 97%;
+    --foreground: 240 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+
+    /* Purple primary from Hi Anime */
+    --primary: 265 89% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Cyan secondary */
+    --secondary: 193 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 20% 95%;
+    --muted-foreground: 240 5% 45%;
+
+    --accent: 265 89% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 20% 90%;
+    --input: 240 20% 90%;
+    --ring: 265 89% 62%;
+
+    --radius: 1rem;
+    
+    /* Custom anime gradients */
+    --gradient-anime: linear-gradient(135deg, hsl(265 89% 62%) 0%, hsl(193 100% 50%) 100%);
+    --gradient-bg: linear-gradient(135deg, hsl(240 60% 92%) 0%, hsl(330 60% 92%) 50%, hsl(190 60% 92%) 100%);
+    --glass-bg: hsla(0, 0%, 100%, 0.6);
+    --glass-border: hsla(265, 89%, 62%, 0.2);
+    
+    /* Glow effects */
+    --glow-primary: 0 0 30px hsla(265, 89%, 62%, 0.5);
+    --glow-secondary: 0 0 30px hsla(193, 100%, 50%, 0.5);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 20% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 15% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 15% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 265 89% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 193 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 15% 20%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 265 89% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 15% 25%;
+    --input: 240 15% 25%;
+    --ring: 265 89% 62%;
+    
+    --gradient-anime: linear-gradient(135deg, hsl(265 89% 62%) 0%, hsl(193 100% 50%) 100%);
+    --gradient-bg: linear-gradient(135deg, hsl(240 40% 15%) 0%, hsl(330 40% 15%) 50%, hsl(190 40% 15%) 100%);
+    --glass-bg: hsla(240, 15%, 20%, 0.6);
+    --glass-border: hsla(265, 89%, 62%, 0.3);
+    --glow-primary: 0 0 30px hsla(265, 89%, 62%, 0.6);
+    --glow-secondary: 0 0 30px hsla(193, 100%, 50%, 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism utilities */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl p-6;
+  }
+  
+  /* Gradient backgrounds */
+  .gradient-anime {
+    background: var(--gradient-anime);
+  }
+  
+  .gradient-bg {
+    background: var(--gradient-bg);
+  }
+  
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+  
+  /* Neon border animation */
+  .neon-border {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(var(--glass-bg), var(--glass-bg)) padding-box,
+                var(--gradient-anime) border-box;
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
