@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/alnroy/MyMedia.git",
+ "homepage": "https://alnroy.github.io/MyMedia/",
+
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
