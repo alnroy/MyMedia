@@ -1,7 +1,7 @@
 import { AuthResponse, User } from '@/types';
 import axios from "axios";
 
-const API_URL = "my-media-backend.vercel.app"; // ✅ match your backend prefix
+const API_URL = "https://my-media-backend.vercel.app/"; // ✅ match your backend prefix
 
 // Axios instance
 const api = axios.create({
