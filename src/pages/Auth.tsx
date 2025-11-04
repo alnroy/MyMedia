@@ -50,7 +50,7 @@ export default function Auth() {
 
     try {
       await register(name, email, password);
-      setTimeout(() => navigate("/"), 500);
+      setTimeout(() => navigate("MyMedia/"), 500);
       toast.success("Account created successfully!");
       toast.success("Please Login!");
     } catch (error: any) {
