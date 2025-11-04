@@ -12,7 +12,7 @@ import { mediaService } from '@/services/mediaService';
 import { Media } from '@/types';
 import { toast } from 'sonner';
 
-const BASE_URL = "my-media-backend.vercel.app"; // ✅ backend root
+const BASE_URL = "https://my-media-backend.vercel.app"; // ✅ backend root
 
 export default function Dashboard() {
   const { user, logout } = useAuthStore();
