@@ -11,6 +11,7 @@ import { useAuthStore } from '@/store/authStore';
 import { mediaService } from '@/services/mediaService';
 import { Media } from '@/types';
 import { toast } from 'sonner';
+import { useNavigate } from "react-router-dom";
 
 const BASE_URL = "https://my-media-backend.vercel.app/api"; // ✅ backend root
 
@@ -25,7 +26,7 @@ export default function Dashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingMedia, setEditingMedia] = useState<Media | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-
+  const navigate = useNavigate();
   // ✅ Load all media from backend
   const loadMedia = async (pageNum: number, reset = false) => {
     try {
@@ -93,6 +94,8 @@ export default function Dashboard() {
       await logout();
     } catch {
       toast.error('Failed to logout');
+      setTimeout(() => navigate("MyMedia/"), 500);
+      toast.success("Logged Out successfully!");
     }
   };
 
