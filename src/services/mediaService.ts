@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://my-media-backend.vercel.app/api // ✅ backend route
+const API_URL = "https://my-media-backend.vercel.app/api/media"
 
 // Attach token
 const getAuthHeader = () => {

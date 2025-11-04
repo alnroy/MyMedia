@@ -15,13 +15,6 @@ export default function Auth() {
   const { login, register, isAuthenticated } = useAuthStore();
   const [isLoading, setIsLoading] = useState(false);
 
-  // ✅ Automatically redirect when authenticated
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     navigate("/dashboard");
-  //   }
-  // }, [isAuthenticated, navigate]);
-
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);

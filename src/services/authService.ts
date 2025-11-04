@@ -1,7 +1,7 @@
 import { AuthResponse, User } from '@/types';
 import axios from "axios";
 
-const API_URL = "https://my-media-backend.vercel.app/api"; // ✅ match your backend prefix
+const API_URL = "https://my-media-backend.vercel.app/api/auth"; // ✅ match your backend prefix
 
 // Axios instance
 const api = axios.create({
@@ -45,7 +45,7 @@ export const authService = {
 
   getMe: async () => {
     const token = localStorage.getItem("token");
-    const res = await axios.get(`${API_URL}/me`, {
+    const res = await axios.get("https://my-media-backend.vercel.app/api/me", {
       headers: { Authorization: `Bearer ${token}` },
     });
     return res.data; // should be { user: {...} } or just {...}
